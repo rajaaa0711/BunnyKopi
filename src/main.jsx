@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
+import "./assets/styles/main.css";
 
 const STRICT_MODE = import.meta.env.VITE_REACT_APP_ENABLE_STRICT_MODE;
 const rootComponent =
