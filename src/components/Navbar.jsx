@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Menu", path: "/jenis-kopi" },
+  { name: "Video", path: "/video" },
   { name: "About Us", path: "/tentang-kopi" },
   { name: "Contact Us", path: "#" },
 ];
@@ -22,7 +23,7 @@ export default function Navbar() {
                 to={item.path}
                 className={`text-lg font-poppins font-medium transition-all duration-200 px-4 py-2 rounded-full ${
                   location.pathname === item.path 
-                    ? "bg-[#FFD966] text-[#4B2E19] shadow-lg" 
+                    ? "bg-[#FFD966] text-[#4B2E19] shadow-lg underline underline-offset-4"
                     : "text-white hover:bg-white hover:bg-opacity-20 hover:text-[#FFD966]"
                 }`}
               >

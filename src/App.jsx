@@ -6,7 +6,7 @@ import TentangKopi from "./pages/TentangKopi";
 import DetailKopi from "./pages/DetailKopi";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-
+import VideoPage from "./pages/VideoPage";
 import "antd/dist/reset.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
@@ -23,6 +23,7 @@ function App() {
         <Route path="/tentang-kopi" element={<TentangKopi />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/video" element={<VideoPage />} />
       </Routes>
     </div>
   );
