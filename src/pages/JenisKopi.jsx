@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import KintamaniImg from "../assets/images/Kintamani.png";
 import RobustaImg from "../assets/images/Robusta.png";
-import NaturalImg from "../assets/images/Natural.png";
+import NaturalImg from "../assets/images/Natural1.png";
 
 const jenisKopi = [
   {
@@ -19,9 +19,9 @@ const jenisKopi = [
     slug: "robusta",
   },
   {
-    nama: "Bali Natural/Fermentasi",
+    nama: "Bali Natural / Fermentasi",
     deskripsi:
-      "Kopi Liberika memiliki aroma unik seperti buah dan bunga, dengan rasa yang khas dan jarang ditemukan di pasaran.",
+      "Kopi Bali adalah kopi khas dari Pulau Bali yang terkenal dengan cita rasa seimbang, aroma rempah, dan sentuhan rasa floral.",
     gambar: NaturalImg,
     slug: "liberika",
   },
