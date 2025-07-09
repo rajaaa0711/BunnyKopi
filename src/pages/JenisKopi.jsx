@@ -1,28 +1,28 @@
 import { Link } from "react-router-dom";
+import KintamaniImg from "../assets/images/Kintamani.png";
+import RobustaImg from "../assets/images/Robusta.png";
+import NaturalImg from "../assets/images/Natural.png";
 
 const jenisKopi = [
   {
-    nama: "Arabika",
+    nama: "Kintamani (Arabika)-Bali",
     deskripsi:
       "Kopi Arabika memiliki rasa yang cenderung asam, aroma wangi, dan kadar kafein lebih rendah. Banyak digemari karena cita rasanya yang kompleks.",
-    gambar:
-      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80",
+    gambar: KintamaniImg,
     slug: "arabika",
   },
   {
-    nama: "Robusta",
+    nama: "Robusta Pupuan-Bali",
     deskripsi:
       "Kopi Robusta memiliki rasa yang lebih pahit, kadar kafein tinggi, dan aroma lebih kuat. Sering digunakan untuk kopi instan dan espresso.",
-    gambar:
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    gambar: RobustaImg,
     slug: "robusta",
   },
   {
-    nama: "Liberika",
+    nama: "Bali Natural/Fermentasi",
     deskripsi:
       "Kopi Liberika memiliki aroma unik seperti buah dan bunga, dengan rasa yang khas dan jarang ditemukan di pasaran.",
-    gambar:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    gambar: NaturalImg,
     slug: "liberika",
   },
 ];

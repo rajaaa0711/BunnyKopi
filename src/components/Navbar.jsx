@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-30 flex justify-between items-center px-16 py-6 bg-black bg-opacity-30 backdrop-blur-sm border-b border-white border-opacity-20">
       <Link to="/">
-        <div className="text-3xl font-dancing text-white tracking-wide cursor-pointer hover:text-[#FFD966] transition-colors duration-200">Bunny Coffee</div>
+        <div className="text-3xl font-dancing text-white tracking-wide cursor-pointer hover:text-[#FFD966] transition-colors duration-200">Temu Coffee</div>
       </Link>
       <div className="flex-1 flex justify-center">
         <ul className="flex gap-6 items-center bg-black bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-2 border border-white border-opacity-30">
