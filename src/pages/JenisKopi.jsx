@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import KintamaniImg from "../assets/images/Kintamani.png";
 import RobustaImg from "../assets/images/Robusta.png";
 import NaturalImg from "../assets/images/Natural1.png";
+import LuwakImg from "../assets/images/LUWAK.png";
 
 const jenisKopi = [
   {
@@ -25,6 +26,13 @@ const jenisKopi = [
     gambar: NaturalImg,
     slug: "liberika",
   },
+  {
+    nama: "KOPI LUWAK",
+    deskripsi:
+      "Kopi luwak berasal dari biji kopi yang telah melewati proses alami dalam sistem pencernaan luwak. Memiliki rasa yang halus, aroma khas, dan keasaman rendah. Cocok bagi penikmat kopi eksklusif.",
+    gambar: LuwakImg,
+    slug: "luwak",
+  },
 ];
 
 export default function JenisKopi() {
@@ -40,11 +48,11 @@ export default function JenisKopi() {
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-900 mb-8 mt-12 drop-shadow-lg tracking-wide px-6 py-3 bg-white bg-opacity-80 rounded-xl shadow-2xl border-2 border-yellow-300">
           Jenis-Jenis Kopi
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl">
+        <div className="grid md:grid-cols-4 gap-8 w-full max-w-6xl">
           {jenisKopi.map((kopi) => (
             <div key={kopi.nama} className="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center border-2 border-[#bfa77a] hover:border-[#a67c52] transition">
               <img src={kopi.gambar} alt={kopi.nama} className="w-40 h-40 object-cover rounded-full mb-4 border-4 border-yellow-900" />
-              <h3 className="text-xl font-semibold text-yellow-900 mb-2">{kopi.nama}</h3>
+              <h3 className="text-xl font-semibold text-yellow-900 mb-2 text-center whitespace-normal break-words">{kopi.nama}</h3>
               <p className="text-yellow-800 text-center mb-4">{kopi.deskripsi}</p>
               <Link to={`/jenis-kopi/${kopi.slug}`}>
                 <button className="bg-[#FFD966] text-[#4B2E19] font-bold px-6 py-2 rounded-full font-poppins shadow hover:bg-[#fff8f0] transition-all duration-200">Lihat Detail</button>

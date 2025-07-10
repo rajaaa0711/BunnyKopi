@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import KintamaniImg from "../assets/images/Kintamani.png";
 import RobustaImg from "../assets/images/Robusta.png";
-import NaturalImg from "../assets/images/Natural.png";
+import NaturalImg from "../assets/images/Natural1.png";
+import LuwakImg from "../assets/images/LUWAK.png";
 
 const dataKopi = {
   arabika: {
@@ -60,6 +61,23 @@ const dataKopi = {
         </p>
         <div className="bg-yellow-100 border-l-4 border-yellow-600 p-4 rounded mb-2">
           <span className="font-bold text-yellow-800">Cita rasa khas:</span> fruity (beri, anggur), manis fermentasi, body heavy, aftertaste lama.
+        </div>
+      </>
+    ),
+  },
+  luwak: {
+    nama: "Kopi Luwak – Eksklusivitas dari Alam Indonesia",
+    gambar: LuwakImg,
+    detail: (
+      <>
+        <p className="mb-4 text-base md:text-lg leading-relaxed text-yellow-900 font-normal">
+          Kopi luwak adalah salah satu kopi paling eksklusif dan bernilai tinggi di dunia. Proses uniknya dimulai saat luwak (sejenis musang) memilih dan memakan buah kopi terbaik. Di dalam sistem pencernaannya, biji kopi mengalami fermentasi alami, lalu dikeluarkan dalam keadaan utuh. Biji ini kemudian dikumpulkan, dibersihkan, dikeringkan, dan dipanggang secara khusus oleh para petani terlatih.
+        </p>
+        <p className="mb-4 text-base md:text-lg leading-relaxed text-yellow-900 font-normal">
+          Proses ini menghasilkan rasa kopi yang lembut, bersih, dan kompleks, dengan tingkat keasaman rendah serta aroma yang khas dan unik. Tidak seperti kopi biasa, kopi luwak memiliki karakter yang lebih halus dan mendalam karena proses fermentasinya yang alami. Jumlahnya yang terbatas membuatnya menjadi kopi istimewa yang sangat dihargai oleh para pecinta kopi premium di seluruh dunia.
+        </p>
+        <div className="bg-yellow-100 border-l-4 border-yellow-600 p-4 rounded mb-2">
+          <span className="font-bold text-yellow-800">Cita rasa khas:</span> Kopi luwak memiliki cita rasa yang sangat halus, earthy (beraroma tanah), sedikit manis, dan rendah keasaman.
         </div>
       </>
     ),
