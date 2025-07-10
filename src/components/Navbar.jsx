@@ -6,7 +6,6 @@ const navItems = [
   { name: "Video", path: "/video" },
   { name: "Recommendation", path: "/cafes" }, // Added Café Pilihan
   { name: "About Us", path: "/tentang-kopi" },
-  { name: "Contact Us", path: "#" },
 ];
 
 export default function Navbar() {

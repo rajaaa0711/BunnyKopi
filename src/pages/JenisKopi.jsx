@@ -29,19 +29,29 @@ const jenisKopi = [
 
 export default function JenisKopi() {
   return (
-    <div className="min-h-screen bg-yellow-50 py-10 px-4 flex flex-col items-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-yellow-900 mb-8">Jenis-Jenis Kopi</h2>
-      <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl">
-        {jenisKopi.map((kopi) => (
-          <div key={kopi.nama} className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center border-2 border-yellow-200 hover:border-yellow-700 transition">
-            <img src={kopi.gambar} alt={kopi.nama} className="w-40 h-40 object-cover rounded-full mb-4 border-4 border-yellow-900" />
-            <h3 className="text-xl font-semibold text-yellow-900 mb-2">{kopi.nama}</h3>
-            <p className="text-yellow-800 text-center mb-4">{kopi.deskripsi}</p>
-            <Link to={`/jenis-kopi/${kopi.slug}`}>
-              <button className="bg-[#FFD966] text-[#4B2E19] font-bold px-6 py-2 rounded-full font-poppins shadow hover:bg-[#fff8f0] transition-all duration-200">Lihat Detail</button>
-            </Link>
-          </div>
-        ))}
+    <div className="relative min-h-screen bg-yellow-50 py-10 px-4 flex flex-col items-center pt-20 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+        alt="Background Kopi"
+        className="absolute inset-0 w-full h-full object-cover opacity-80 z-0"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+      <div className="relative z-20 flex flex-col items-center w-full">
+        <h2 className="text-3xl md:text-4xl font-bold text-yellow-900 mb-8 mt-12 drop-shadow-lg tracking-wide px-6 py-3 bg-white bg-opacity-80 rounded-xl shadow-2xl border-2 border-yellow-300">
+          Jenis-Jenis Kopi
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl">
+          {jenisKopi.map((kopi) => (
+            <div key={kopi.nama} className="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center border-2 border-[#bfa77a] hover:border-[#a67c52] transition">
+              <img src={kopi.gambar} alt={kopi.nama} className="w-40 h-40 object-cover rounded-full mb-4 border-4 border-yellow-900" />
+              <h3 className="text-xl font-semibold text-yellow-900 mb-2">{kopi.nama}</h3>
+              <p className="text-yellow-800 text-center mb-4">{kopi.deskripsi}</p>
+              <Link to={`/jenis-kopi/${kopi.slug}`}>
+                <button className="bg-[#FFD966] text-[#4B2E19] font-bold px-6 py-2 rounded-full font-poppins shadow hover:bg-[#fff8f0] transition-all duration-200">Lihat Detail</button>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

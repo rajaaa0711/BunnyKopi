@@ -16,9 +16,6 @@ export default function Beranda() {
         <h2 className="text-xl md:text-2xl font-semibold text-white mb-8 font-poppins drop-shadow">
           Di sinilah <span className="text-[#FFD966] font-bold">kopi mempertemukan kita</span>
         </h2>
-        <Link to="/jenis-kopi">
-          <button className="bg-[#FFD966] text-[#4B2E19] font-bold px-8 py-3 rounded-full text-lg shadow-lg hover:bg-[#fff8f0] transition-all duration-200">Order Now</button>
-        </Link>
       </div>
     </div>
   );
