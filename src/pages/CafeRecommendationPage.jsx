@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Tooltip } from "antd";
-import { FiEdit2, FiMapPin, FiX } from "react-icons/fi";
+import { FiEdit2, FiMapPin, FiX, FiMoreVertical } from "react-icons/fi";
 import RekomendasiCafe from "../assets/images/RekomendasiCafe.png";
 
 // Mocked user (simulate authentication)
@@ -82,17 +82,76 @@ function CafeForm({ onSubmit, initial, onClose }) {
 
 function ReviewSection({ cafeId, reviews, onAdd, onDelete }) {
   const [text, setText] = useState("");
+  const [editId, setEditId] = useState(null);
+  const [editText, setEditText] = useState("");
+  const [menuOpenId, setMenuOpenId] = useState(null);
+  const menuRef = useRef();
+
+  // Close dropdown on outside click
+  React.useEffect(() => {
+    function handleClick(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpenId(null);
+      }
+    }
+    if (menuOpenId !== null) {
+      document.addEventListener("mousedown", handleClick);
+      return () => document.removeEventListener("mousedown", handleClick);
+    }
+  }, [menuOpenId]);
+
   return (
     <div className="mt-4 bg-coffee-50 rounded-2xl p-4 font-poppins">
       <h4 className="font-semibold text-coffee-700 mb-3 text-base">Reviews</h4>
       <div className="flex flex-col gap-3 mb-3">
         {reviews.length === 0 && <span className="text-coffee-400 text-sm">No reviews yet.</span>}
         {reviews.map((r) => (
-          <div key={r.id} className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow text-base">
+          <div key={r.id} className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow text-base relative">
             <span className="font-bold text-coffee-600 text-sm mr-2">{r.username}</span>
-            <span className="text-gray-700 text-base flex-1">{r.text}</span>
-            {user.id === r.authorId && (
-              <button onClick={() => onDelete(r.id)} className="text-coffee-400 hover:text-red-500 transition-colors text-lg p-1 rounded-full focus:outline-none cursor-pointer" title="Delete"><FiX /></button>
+            {editId === r.id ? (
+              <>
+                <input
+                  className="flex-1 border border-coffee-200 rounded-lg px-3 py-2 text-base font-poppins mr-2"
+                  value={editText}
+                  onChange={e => setEditText(e.target.value)}
+                  autoFocus
+                />
+                <button
+                  className="bg-coffee-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:bg-coffee-700 transition-all mr-2"
+                  onClick={() => { if (editText.trim()) { onAdd(editText, r.id); setEditId(null); } }}
+                >Save</button>
+                <button
+                  className="bg-gray-200 text-coffee-700 px-3 py-1 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-all"
+                  onClick={() => setEditId(null)}
+                >Cancel</button>
+              </>
+            ) : (
+              <>
+                <span className="text-gray-700 text-base flex-1">{r.text}</span>
+                {user.id === r.authorId && (
+                  <div className="relative" ref={menuRef}>
+                    <button
+                      className="p-2 rounded-full hover:bg-gray-100 transition-all cursor-pointer focus:outline-none"
+                      onClick={() => setMenuOpenId(menuOpenId === r.id ? null : r.id)}
+                      aria-label="Review options"
+                    >
+                      <FiMoreVertical size={18} />
+                    </button>
+                    {menuOpenId === r.id && (
+                      <div className="absolute right-0 top-8 bg-white border border-gray-200 rounded-lg shadow-lg py-1 w-36 z-30 animate-fade-in">
+                        <button
+                          className="w-full text-left px-4 py-2 text-sm text-coffee-700 hover:bg-gray-100 transition-all cursor-pointer"
+                          onClick={() => { setEditId(r.id); setEditText(r.text); setMenuOpenId(null); }}
+                        >Edit Review</button>
+                        <button
+                          className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 transition-all cursor-pointer"
+                          onClick={() => { onDelete(r.id); setMenuOpenId(null); }}
+                        >Delete Review</button>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </>
             )}
           </div>
         ))}
@@ -163,8 +222,27 @@ export default function CafeRecommendationPage() {
     setShowForm(false);
   };
 
-  const handleAddReview = (cafeId, text) => {
-    setCafes((prev) => prev.map((c) => c.id === cafeId ? { ...c, reviews: [...c.reviews, { id: Date.now().toString(), username: user.username, authorId: user.id, text }] } : c));
+  const handleAddReview = (cafeId, text, editId = null) => {
+    setCafes((prev) =>
+      prev.map((c) =>
+        c.id === cafeId
+          ? {
+              ...c,
+              reviews: editId
+                ? c.reviews.map((r) => r.id === editId ? { ...r, text } : r)
+                : [
+                    ...c.reviews,
+                    {
+                      id: Date.now().toString(),
+                      username: user.username,
+                      authorId: user.id,
+                      text,
+                    },
+                  ],
+          }
+        : c
+      )
+    );
   };
 
   const handleDeleteReview = (cafeId, reviewId) => {
