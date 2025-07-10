@@ -4,6 +4,7 @@ const navItems = [
   { name: "Home", path: "/" },
   { name: "Menu", path: "/jenis-kopi" },
   { name: "Video", path: "/video" },
+  { name: "Recommendation", path: "/cafes" }, // Added Café Pilihan
   { name: "About Us", path: "/tentang-kopi" },
   { name: "Contact Us", path: "#" },
 ];
