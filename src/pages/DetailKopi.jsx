@@ -66,15 +66,18 @@ const dataKopi = {
     ),
   },
   luwak: {
-    nama: "Kopi Luwak – Eksklusivitas dari Alam Indonesia",
+    nama: "Kopi Luwak Bali",
     gambar: LuwakImg,
     detail: (
       <>
         <p className="mb-4 text-base md:text-lg leading-relaxed text-yellow-900 font-normal">
-          Kopi luwak adalah salah satu kopi paling eksklusif dan bernilai tinggi di dunia. Proses uniknya dimulai saat luwak (sejenis musang) memilih dan memakan buah kopi terbaik. Di dalam sistem pencernaannya, biji kopi mengalami fermentasi alami, lalu dikeluarkan dalam keadaan utuh. Biji ini kemudian dikumpulkan, dibersihkan, dikeringkan, dan dipanggang secara khusus oleh para petani terlatih.
+          Kopi luwak Bali adalah salah satu varian kopi paling eksklusif dan unik di dunia, berasal dari daerah pegunungan subur di Bali yang dikenal memiliki tanah vulkanik kaya mineral. Proses pembuatannya sangat khas dan alami. Dimulai saat luwak (sejenis musang) memilih buah kopi terbaik untuk dimakan. Di dalam sistem pencernaannya, biji kopi mengalami fermentasi alami yang mengubah komposisi kimia dan rasa biji tersebut. Setelah dikeluarkan bersama kotoran, biji kopi ini dikumpulkan, dibersihkan secara higienis, dijemur di bawah sinar matahari, lalu dipanggang oleh para petani berpengalaman.
         </p>
         <p className="mb-4 text-base md:text-lg leading-relaxed text-yellow-900 font-normal">
-          Proses ini menghasilkan rasa kopi yang lembut, bersih, dan kompleks, dengan tingkat keasaman rendah serta aroma yang khas dan unik. Tidak seperti kopi biasa, kopi luwak memiliki karakter yang lebih halus dan mendalam karena proses fermentasinya yang alami. Jumlahnya yang terbatas membuatnya menjadi kopi istimewa yang sangat dihargai oleh para pecinta kopi premium di seluruh dunia.
+          Yang membuat kopi luwak Bali istimewa adalah cita rasanya yang sangat halus dan kompleks. Dibanding kopi biasa, kopi ini memiliki keasaman yang rendah, rasa pahit yang minimal, dan aftertaste yang bersih. Aroma kopi luwak Bali cenderung lembut namun khas, dengan sentuhan floral, rempah ringan, cokelat, dan sedikit karamel. Lingkungan tumbuh yang alami di Bali juga turut memberikan sentuhan rasa earthy (tanah) yang ringan namun menyegarkan.
+        </p>
+        <p className="mb-4 text-base md:text-lg leading-relaxed text-yellow-900 font-normal">
+          Karena prosesnya yang langka dan terbatas, serta karakter rasa yang unik, kopi luwak Bali menjadi pilihan utama bagi pecinta kopi premium yang mencari pengalaman rasa yang berbeda dan eksklusif.
         </p>
         <div className="bg-yellow-100 border-l-4 border-yellow-600 p-4 rounded mb-2">
           <span className="font-bold text-yellow-800">Cita rasa khas:</span> Kopi luwak memiliki cita rasa yang sangat halus, earthy (beraroma tanah), sedikit manis, dan rendah keasaman.

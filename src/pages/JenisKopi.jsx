@@ -27,7 +27,7 @@ const jenisKopi = [
     slug: "liberika",
   },
   {
-    nama: "KOPI LUWAK",
+    nama: "Kopi Luwak Bali",
     deskripsi:
       "Kopi luwak berasal dari biji kopi yang telah melewati proses alami dalam sistem pencernaan luwak. Memiliki rasa yang halus, aroma khas, dan keasaman rendah. Cocok bagi penikmat kopi eksklusif.",
     gambar: LuwakImg,
